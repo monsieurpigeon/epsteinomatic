@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masqueur — Outil de travail</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <nav>
+      <a href="index.html">Présentation</a>
+      <a href="travail.html" class="active">Outil de travail</a>
+    </nav>
+  </header>
+
+  <main class="work">
+    <h1>Outil de travail</h1>
+
+    <div class="upload-zone" id="upload-zone">
+      <input type="file" id="file-input" accept="image/*" hidden>
+      <p class="upload-text">Glissez une photo ici ou cliquez pour choisir</p>
+    </div>
+
+    <div class="editor-wrap" id="editor-wrap" hidden>
+      <div class="canvas-wrap">
+        <canvas id="preview-canvas"></canvas>
+      </div>
+      <p class="hint" id="hint">Chargement…</p>
+      <div class="actions">
+        <button type="button" id="btn-detect" class="btn btn-primary">Détecter les personnes</button>
+        <button type="button" id="btn-download" class="btn btn-secondary" disabled>Télécharger l'image</button>
+      </div>
+    </div>
+
+    <p class="offline-hint" id="offline-hint" hidden>Mode hors ligne actif.</p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.11.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.2/dist/coco-ssd.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/travail.js"></script>
+</body>
+
+</html>
