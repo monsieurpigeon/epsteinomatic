@@ -130,12 +130,44 @@ export default function Presentation(): JSX.Element {
           </p>
 
           <p
-            className="text-lg mb-12 max-w-xl mx-auto text-white"
+            className="text-lg mb-10 max-w-xl mx-auto text-white"
             style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}
           >
             Detect people in your photos, click to hide whoever you want, download the image.
             All in the browser. No data sent anywhere.
           </p>
+
+          {/* Before / After */}
+          <section className="mb-12 text-center">
+            <h2
+              className="text-xl font-semibold mb-4 text-white"
+              style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}
+            >
+              Before / After
+            </h2>
+            <div className="grid grid-cols-2 gap-3 sm:gap-6 max-w-2xl mx-auto">
+              <div className="rounded-box overflow-hidden border-2 border-white/30 shadow-xl bg-ocean-dark/50">
+                <img
+                  src="/photo.jpg"
+                  alt="Original photo"
+                  className="w-full h-auto block object-cover aspect-[3/4] sm:aspect-auto"
+                />
+                <p className="py-2 text-sm font-medium text-sand-light bg-ocean-dark/80" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>
+                  Before
+                </p>
+              </div>
+              <div className="rounded-box overflow-hidden border-2 border-white/30 shadow-xl bg-ocean-dark/50">
+                <img
+                  src="/epsteined_photo.png"
+                  alt="Processed photo with masked people"
+                  className="w-full h-auto block object-cover aspect-[3/4] sm:aspect-auto"
+                />
+                <p className="py-2 text-sm font-medium text-sand-light bg-ocean-dark/80" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>
+                  After
+                </p>
+              </div>
+            </div>
+          </section>
 
           <section className="grid gap-5 mb-12 text-left">
             <div
