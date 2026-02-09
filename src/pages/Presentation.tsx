@@ -141,22 +141,28 @@ export default function Presentation(): JSX.Element {
             >
               Before / After
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 max-w-2xl mx-auto min-w-0">
-              <div className="rounded-box overflow-hidden border-2 border-white/30 shadow-xl bg-ocean-dark/50 min-w-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 max-w-2xl mx-auto min-w-0 justify-items-center">
+              <div className="w-[300px] max-w-full rounded-box overflow-hidden border-2 border-white/30 shadow-xl bg-ocean-dark/50 min-w-0">
                 <img
-                  src="/photo.jpg"
+                  src="/photo-home.webp"
                   alt="Original photo"
                   className="w-full h-auto block object-contain sm:object-cover aspect-auto"
+                  loading="lazy"
+                  decoding="async"
+                  width={300}
                 />
                 <p className="py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-sand-light bg-ocean-dark/80" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>
                   Before
                 </p>
               </div>
-              <div className="rounded-box overflow-hidden border-2 border-white/30 shadow-xl bg-ocean-dark/50 min-w-0">
+              <div className="w-[300px] max-w-full rounded-box overflow-hidden border-2 border-white/30 shadow-xl bg-ocean-dark/50 min-w-0">
                 <img
-                  src="/epsteined_photo.png"
+                  src="/epsteined_photo-home.webp"
                   alt="Processed photo with masked people"
                   className="w-full h-auto block object-contain sm:object-cover aspect-auto"
+                  loading="lazy"
+                  decoding="async"
+                  width={300}
                 />
                 <p className="py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-sand-light bg-ocean-dark/80" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>
                   After

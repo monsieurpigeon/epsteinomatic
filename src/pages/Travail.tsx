@@ -1,7 +1,4 @@
 import type { ObjectDetection } from '@tensorflow-models/coco-ssd';
-import * as cocoSsd from '@tensorflow-models/coco-ssd';
-import '@tensorflow/tfjs-backend-cpu';
-import '@tensorflow/tfjs-backend-webgl';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 type BBox = [number, number, number, number]; // [x, y, width, height]
@@ -24,6 +21,9 @@ export default function Travail(): JSX.Element {
   const loadModel = useCallback(async (): Promise<ObjectDetection> => {
     if (modelRef.current) return modelRef.current;
     setHint('Loading model…');
+    await import('@tensorflow/tfjs-backend-cpu');
+    await import('@tensorflow/tfjs-backend-webgl');
+    const cocoSsd = await import('@tensorflow-models/coco-ssd');
     modelRef.current = await cocoSsd.load();
     return modelRef.current;
   }, []);

@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "npm run optimize-home-images && vite build",
+    "preview": "vite preview",
+    "optimize-home-images": "node scripts/optimize-home-images.js"
   },
   "dependencies": {
     "@tensorflow-models/coco-ssd": "^2.2.2",
@@ -19,6 +20,7 @@
     "react-router-dom": "^6.20.0"
   },
   "devDependencies": {
+    "sharp": "^0.33.5",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.0",
