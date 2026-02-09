@@ -1,50 +1,59 @@
-# Masqueur d'anonymat
+# epstein-ô-matic
 
-Outil web (React) qui détecte les **personnes** sur une photo, affiche un **cadre cliquable** sur chacune, permet de **masquer à la demande** (clic pour cacher / réafficher) puis de **télécharger l'image**. 100 % offline (TensorFlow.js + COCO-SSD).
+Web app that **detects people** in a photo, shows a **clickable frame** around each, lets you **hide or show** them on click, then **download the image**. 100% offline (TensorFlow.js + COCO-SSD). No data is sent to any server.
+
+**Live:** [epsteinomatic.com](https://epsteinomatic.com) · **Source:** [github.com/monsieurpigeon/epsteinomatic](https://github.com/monsieurpigeon/epsteinomatic)
 
 ## Stack
 
 - **React 18** + **Vite** + **TypeScript**
-- **React Router** : 2 routes — `/` (Home), `/workspace` (Workspace)
-- **COCO-SSD** (détection des personnes) via `@tensorflow-models/coco-ssd`
+- **React Router**: 2 routes — `/` (Home), `/workspace` (Workspace)
+- **COCO-SSD** (person detection) via `@tensorflow-models/coco-ssd`
+- **Tailwind CSS** for styling
 
-## Lancer le projet
+## Getting started
 
 ```bash
-# Installer les dépendances
+# Install dependencies
 npm install
 
-# Démarrer le serveur de dev
+# Start dev server
 npm run dev
 ```
 
-Puis ouvrir **http://localhost:5173** (ou l’URL affichée par Vite).
+Then open **http://localhost:5173** (or the URL shown by Vite).
 
-## Build production
+## Production build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-Le build est dans `dist/`. Pour déployer, servir le contenu de `dist/` en HTTPS (le Service Worker en a besoin).
+Output is in `dist/`. To deploy, serve the contents of `dist/` over HTTPS (required for the Service Worker).
 
 ## Routes
 
 | Route        | Page                                             |
 | ------------ | ------------------------------------------------ |
-| `/`          | Présentation                                     |
+| `/`          | Landing (presentation)                           |
 | `/workspace` | Workspace (upload, detection, masking, download) |
 
-## Utilisation
+## How to use
 
-1. **Présentation** : page d’accueil qui décrit l’outil.
-2. **Workspace** (`/workspace`) :
-   - Glisser une photo ou cliquer pour en choisir une.
-   - Cliquer sur « Détecter les personnes » (le modèle se charge au premier usage).
-   - Cadres sur chaque personne ; cliquer pour masquer ou réafficher. Télécharger l’image.
+1. **Landing** (`/`): Home page describing the tool.
+2. **Workspace** (`/workspace`):
+   - Drop a photo or click to choose one.
+   - Click **Detect people** (the model loads on first use).
+   - Frames appear around each person; click to hide or show them. Download the image.
 
-## Technique
+Downloaded images include a watermark in the bottom-right corner (epsteinomatic.com).
 
-- **Détection** : [COCO-SSD](https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd) (classe « person ») ; cadres cliquables et masquage au clic.
-- **Cache** : Service Worker (`public/sw.js`) pour servir l’app hors ligne après le premier chargement.
+## Technical notes
+
+- **Detection**: [COCO-SSD](https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd) (class « person »); clickable frames and toggle masking on click.
+- **Offline**: Service Worker (`public/sw.js`) caches the app shell so it works offline after the first load.
+
+## License
+
+Open source — see [repository](https://github.com/monsieurpigeon/epsteinomatic).

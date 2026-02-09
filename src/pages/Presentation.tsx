@@ -233,7 +233,15 @@ export default function Presentation(): JSX.Element {
         </div>
         <div className="bg-gradient-to-b from-sand-dark to-sand min-h-[5rem] sm:min-h-[6rem] md:min-h-[8rem] pt-6 pb-6 sm:pt-8 sm:pb-8 flex items-center justify-center px-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
           <p className="text-sand-ink text-xs sm:text-sm font-semibold text-center break-words">
-            epstein-👁️-matic · paradise edition
+            epstein-👁️-matic · paradise edition ·{' '}
+            <a
+              href="https://github.com/monsieurpigeon/epsteinomatic"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-sand-ink/80 transition-colors"
+            >
+              GitHub
+            </a>
           </p>
         </div>
       </footer>
