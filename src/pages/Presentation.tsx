@@ -60,7 +60,7 @@ function PalmsChaos(): JSX.Element {
 function CausticsLayer(): JSX.Element {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <svg className="absolute inset-0 w-full h-full opacity-[0.14]" xmlns="http://www.w3.org/2000/svg">
+      <svg className="absolute inset-0 w-full h-full opacity-[0.14]" viewBox="0 0 200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter id="causticBlur">
             <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
@@ -71,14 +71,14 @@ function CausticsLayer(): JSX.Element {
           </filter>
         </defs>
         <g fill="rgba(255,255,255,0.5)" filter="url(#causticBlur)">
-          <ellipse cx="15%" cy="70%" rx="28%" ry="12%" opacity="0.6" />
-          <ellipse cx="85%" cy="60%" rx="22%" ry="10%" opacity="0.5" />
+          <ellipse cx="30" cy="70" rx="56" ry="12" opacity="0.6" />
+          <ellipse cx="170" cy="60" rx="44" ry="10" opacity="0.5" />
           <path d="M0 50 Q25 30 50 50 T100 45 T150 55 T200 50 V100 H0 Z" opacity="0.4" />
-          <ellipse cx="50%" cy="85%" rx="40%" ry="8%" opacity="0.5" />
-          <ellipse cx="70%" cy="25%" rx="15%" ry="18%" opacity="0.45" />
-          <ellipse cx="25%" cy="35%" rx="20%" ry="14%" opacity="0.45" />
-          <path d="M30 0 Q50 20 30 40 Q10 20 30 0" opacity="0.35" transform="translate(20%, 15%) scale(4)" />
-          <path d="M0 0 Q40 30 0 60 Q-20 30 0 0" opacity="0.35" transform="translate(75%, 55%) scale(3)" />
+          <ellipse cx="100" cy="85" rx="80" ry="8" opacity="0.5" />
+          <ellipse cx="140" cy="25" rx="30" ry="18" opacity="0.45" />
+          <ellipse cx="50" cy="35" rx="40" ry="14" opacity="0.45" />
+          <path d="M30 0 Q50 20 30 40 Q10 20 30 0" opacity="0.35" transform="translate(40, 15) scale(4)" />
+          <path d="M0 0 Q40 30 0 60 Q-20 30 0 0" opacity="0.35" transform="translate(150, 55) scale(3)" />
         </g>
       </svg>
       <svg className="absolute inset-0 w-full h-full opacity-[0.08]" xmlns="http://www.w3.org/2000/svg">
