@@ -4,9 +4,19 @@
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   background-color: #0f0f12;
   color: #e8e8ed;
   font-family: "DM Sans", system-ui, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(env(safe-area-inset-left), 0px);
+    padding-right: max(env(safe-area-inset-right), 0px);
+  }
 }

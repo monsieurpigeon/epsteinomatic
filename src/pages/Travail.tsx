@@ -235,13 +235,13 @@ export default function Travail(): JSX.Element {
   }, []);
 
   return (
-    <main className="max-w-[640px] mx-auto py-8 px-6">
-      <h1 className="text-2xl sm:text-3xl font-bold mb-6">Workspace</h1>
+    <main className="max-w-[640px] mx-auto py-5 px-4 sm:py-8 sm:px-6 w-full min-w-0">
+      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6">Workspace</h1>
 
       <div
         className={`
-          border-2 border-dashed rounded-box py-12 px-8 text-center cursor-pointer
-          transition-colors duration-200 mb-6
+          border-2 border-dashed rounded-box py-8 px-4 sm:py-12 sm:px-8 text-center cursor-pointer
+          transition-colors duration-200 mb-4 sm:mb-6 min-h-[120px] sm:min-h-[140px] flex items-center justify-center
           ${dragover ? 'border-accent bg-accent/10' : 'border-border hover:border-accent hover:bg-accent/10'}
         `}
         onClick={onUploadClick}
@@ -256,24 +256,24 @@ export default function Travail(): JSX.Element {
           className="hidden"
           onChange={(e) => handleFile(e.target.files?.[0])}
         />
-        <p className="text-muted">Drop a photo here or click to choose</p>
+        <p className="text-muted text-sm sm:text-base">Drop a photo here or click to choose</p>
       </div>
 
       {editorVisible && (
         <div className="mt-4">
-          <div className="bg-surface border border-border rounded-box p-4 mb-3 overflow-auto max-h-[70vh] flex justify-center items-start">
+          <div className="bg-surface border border-border rounded-box p-3 sm:p-4 mb-3 overflow-auto max-h-[55vh] sm:max-h-[65vh] md:max-h-[70vh] flex justify-center items-start">
             <canvas
               ref={canvasRef}
-              className="block max-w-full h-auto rounded"
+              className="block max-w-full h-auto rounded touch-none"
               onClick={handleCanvasClick}
               onMouseMove={handleCanvasMouseMove}
             />
           </div>
-          <p className="text-muted text-[0.95rem] mb-4">{hint}</p>
-          <div className="flex flex-wrap gap-3 items-center">
+          <p className="text-muted text-sm sm:text-[0.95rem] mb-4 break-words">{hint}</p>
+          <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3">
             <button
               type="button"
-              className="px-6 py-3 rounded-box font-semibold transition-all disabled:opacity-60 disabled:cursor-not-allowed bg-accent text-white hover:bg-accent-hover"
+              className="w-full sm:w-auto min-h-[48px] px-6 py-3 rounded-box font-semibold transition-all disabled:opacity-60 disabled:cursor-not-allowed bg-accent text-white hover:bg-accent-hover order-1"
               onClick={handleDetect}
               disabled={detectDisabled}
             >
@@ -281,7 +281,7 @@ export default function Travail(): JSX.Element {
             </button>
             <button
               type="button"
-              className="mt-4 sm:mt-0 px-6 py-3 rounded-box font-semibold border border-border bg-surface text-[#e8e8ed] hover:bg-border transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full sm:w-auto min-h-[48px] px-6 py-3 rounded-box font-semibold border border-border bg-surface text-[#e8e8ed] hover:bg-border transition-colors disabled:opacity-60 disabled:cursor-not-allowed order-2"
               onClick={handleDownload}
               disabled={downloadDisabled}
             >
@@ -289,7 +289,7 @@ export default function Travail(): JSX.Element {
             </button>
             <button
               type="button"
-              className="mt-4 sm:mt-0 px-6 py-3 rounded-box font-semibold border border-border bg-surface text-[#e8e8ed] hover:bg-border transition-colors"
+              className="w-full sm:w-auto min-h-[48px] px-6 py-3 rounded-box font-semibold border border-border bg-surface text-[#e8e8ed] hover:bg-border transition-colors order-3"
               onClick={handleRetry}
             >
               Retry
@@ -299,7 +299,7 @@ export default function Travail(): JSX.Element {
       )}
 
       {!navigator.onLine && (
-        <p className="mt-8 text-sm text-muted">Offline mode active.</p>
+        <p className="mt-6 sm:mt-8 text-xs sm:text-sm text-muted">Offline mode active.</p>
       )}
     </main>
   );

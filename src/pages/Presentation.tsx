@@ -47,12 +47,12 @@ const frondPaths = [
 function PalmsChaos(): JSX.Element {
   return (
     <>
-      <SinglePalmFrond id="a" flip={false} paths={frondPaths} className="absolute -left-16 top-[5%] h-[55%] w-40 opacity-90 -rotate-12 scale-110" />
-      <SinglePalmFrond id="b" flip={true} paths={frondPaths} className="absolute -left-8 top-[35%] h-[50%] w-36 opacity-80 rotate-6 scale-95" />
-      <SinglePalmFrond id="c" flip={false} paths={frondPaths} className="absolute left-0 top-[60%] h-[45%] w-32 opacity-85 -rotate-3 scale-100" />
-      <SinglePalmFrond id="d" flip={true} paths={frondPaths} className="absolute -right-20 top-[10%] h-[60%] w-44 opacity-90 rotate-[14deg] scale-105" />
-      <SinglePalmFrond id="e" flip={false} paths={frondPaths} className="absolute right-0 top-[40%] h-[48%] w-38 opacity-80 -rotate-8 scale-95" />
-      <SinglePalmFrond id="f" flip={true} paths={frondPaths} className="absolute -right-12 top-[65%] h-[42%] w-34 opacity-75 rotate-2 scale-110" />
+      <SinglePalmFrond id="a" flip={false} paths={frondPaths} className="absolute -left-8 sm:-left-16 top-[5%] h-[45%] sm:h-[55%] w-20 sm:w-40 opacity-70 sm:opacity-90 -rotate-12 scale-90 sm:scale-110" />
+      <SinglePalmFrond id="b" flip={true} paths={frondPaths} className="absolute -left-4 sm:-left-8 top-[32%] sm:top-[35%] h-[40%] sm:h-[50%] w-16 sm:w-36 opacity-60 sm:opacity-80 rotate-6 scale-75 sm:scale-95 hidden sm:block" />
+      <SinglePalmFrond id="c" flip={false} paths={frondPaths} className="absolute left-0 top-[58%] sm:top-[60%] h-[38%] sm:h-[45%] w-14 sm:w-32 opacity-65 sm:opacity-85 -rotate-3 hidden md:block" />
+      <SinglePalmFrond id="d" flip={true} paths={frondPaths} className="absolute -right-10 sm:-right-20 top-[8%] sm:top-[10%] h-[50%] sm:h-[60%] w-24 sm:w-44 opacity-70 sm:opacity-90 rotate-[14deg] scale-90 sm:scale-105" />
+      <SinglePalmFrond id="e" flip={false} paths={frondPaths} className="absolute right-0 top-[38%] sm:top-[40%] h-[40%] sm:h-[48%] w-20 sm:w-38 opacity-60 sm:opacity-80 -rotate-8 scale-75 sm:scale-95 hidden sm:block" />
+      <SinglePalmFrond id="f" flip={true} paths={frondPaths} className="absolute -right-6 sm:-right-12 top-[62%] sm:top-[65%] h-[35%] sm:h-[42%] w-16 sm:w-34 opacity-55 sm:opacity-75 rotate-2 scale-90 sm:scale-110 hidden md:block" />
     </>
   );
 }
@@ -108,100 +108,96 @@ export default function Presentation(): JSX.Element {
 
   return (
     <div className="flex flex-col min-h-[calc(100vh-4rem)]">
-      <main className="flex-1 relative pt-12 pb-24 px-6 overflow-visible min-h-[500px] bg-gradient-to-b from-ocean-deep from-10% via-ocean-blue via-40% to-ocean to-90%">
-        {/* Caustics overlay */}
+      <main className="flex-1 relative pt-6 pb-16 sm:pt-12 sm:pb-24 px-4 sm:px-6 md:px-8 overflow-visible min-h-[380px] sm:min-h-[500px] bg-gradient-to-b from-ocean-deep from-10% via-ocean-blue via-40% to-ocean to-90%">
         <CausticsLayer />
-
-        {/* Chaotic palms - can overflow */}
         <PalmsChaos />
 
-        <div className="relative z-10 max-w-[720px] mx-auto text-center">
+        <div className="relative z-10 max-w-[720px] mx-auto text-center w-full min-w-0">
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4 text-white"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3 sm:mb-4 text-white break-words"
             style={{ textShadow: '0 2px 12px rgba(0,0,0,0.6), 0 0 32px rgba(0,0,0,0.35)' }}
           >
             epstein-👁️-matic
           </h1>
           <p
-            className="text-xl sm:text-2xl font-medium mb-14 text-[#fefce8]"
+            className="text-lg sm:text-xl md:text-2xl font-medium mb-8 sm:mb-14 text-[#fefce8] px-1"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4)' }}
           >
             Turn your memories into crimes
           </p>
 
           <p
-            className="text-lg mb-10 max-w-xl mx-auto text-white"
+            className="text-base sm:text-lg mb-8 sm:mb-10 max-w-xl mx-auto text-white px-1"
             style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}
           >
             Detect people in your photos, click to hide whoever you want, download the image.
             All in the browser. No data sent anywhere.
           </p>
 
-          {/* Before / After */}
-          <section className="mb-12 text-center">
+          <section className="mb-8 sm:mb-12 text-center">
             <h2
-              className="text-xl font-semibold mb-4 text-white"
+              className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-white"
               style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}
             >
               Before / After
             </h2>
-            <div className="grid grid-cols-2 gap-3 sm:gap-6 max-w-2xl mx-auto">
-              <div className="rounded-box overflow-hidden border-2 border-white/30 shadow-xl bg-ocean-dark/50">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 max-w-2xl mx-auto min-w-0">
+              <div className="rounded-box overflow-hidden border-2 border-white/30 shadow-xl bg-ocean-dark/50 min-w-0">
                 <img
                   src="/photo.jpg"
                   alt="Original photo"
-                  className="w-full h-auto block object-cover aspect-[3/4] sm:aspect-auto"
+                  className="w-full h-auto block object-contain sm:object-cover aspect-auto"
                 />
-                <p className="py-2 text-sm font-medium text-sand-light bg-ocean-dark/80" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>
+                <p className="py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-sand-light bg-ocean-dark/80" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>
                   Before
                 </p>
               </div>
-              <div className="rounded-box overflow-hidden border-2 border-white/30 shadow-xl bg-ocean-dark/50">
+              <div className="rounded-box overflow-hidden border-2 border-white/30 shadow-xl bg-ocean-dark/50 min-w-0">
                 <img
                   src="/epsteined_photo.png"
                   alt="Processed photo with masked people"
-                  className="w-full h-auto block object-cover aspect-[3/4] sm:aspect-auto"
+                  className="w-full h-auto block object-contain sm:object-cover aspect-auto"
                 />
-                <p className="py-2 text-sm font-medium text-sand-light bg-ocean-dark/80" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>
+                <p className="py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-sand-light bg-ocean-dark/80" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>
                   After
                 </p>
               </div>
             </div>
           </section>
 
-          <section className="grid gap-5 mb-12 text-left">
+          <section className="grid gap-3 sm:gap-5 mb-8 sm:mb-12 text-left">
             <div
-              className="rounded-box p-6 flex gap-4 items-start border border-white/25 shadow-xl border-l-4 border-l-palm-light bg-ocean-dark/70 backdrop-blur-sm"
+              className="rounded-box p-4 sm:p-6 flex gap-3 sm:gap-4 items-start border border-white/25 shadow-xl border-l-4 border-l-palm-light bg-ocean-dark/70 backdrop-blur-sm"
               style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.25)' }}
             >
-              <span className="text-3xl shrink-0" aria-hidden>🔒</span>
-              <div>
-                <h2 className="text-lg font-semibold mb-1.5 text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>100% offline</h2>
-                <p className="text-[0.95rem] text-white/95" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
+              <span className="text-2xl sm:text-3xl shrink-0" aria-hidden>🔒</span>
+              <div className="min-w-0">
+                <h2 className="text-base sm:text-lg font-semibold mb-1 sm:mb-1.5 text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>100% offline</h2>
+                <p className="text-sm sm:text-[0.95rem] text-white/95 leading-snug" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
                   After the first load, everything works without a connection. No image is ever sent to a server.
                 </p>
               </div>
             </div>
             <div
-              className="rounded-box p-6 flex gap-4 items-start border border-white/25 shadow-xl border-l-4 border-l-tropical bg-ocean-dark/70 backdrop-blur-sm"
+              className="rounded-box p-4 sm:p-6 flex gap-3 sm:gap-4 items-start border border-white/25 shadow-xl border-l-4 border-l-tropical bg-ocean-dark/70 backdrop-blur-sm"
               style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.25)' }}
             >
-              <span className="text-3xl shrink-0" aria-hidden>👁️</span>
-              <div>
-                <h2 className="text-lg font-semibold mb-1.5 text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>Clickable frames</h2>
-                <p className="text-[0.95rem] text-white/95" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
+              <span className="text-2xl sm:text-3xl shrink-0" aria-hidden>👁️</span>
+              <div className="min-w-0">
+                <h2 className="text-base sm:text-lg font-semibold mb-1 sm:mb-1.5 text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>Clickable frames</h2>
+                <p className="text-sm sm:text-[0.95rem] text-white/95 leading-snug" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
                   People are detected automatically. A frame appears around each; click to hide or show them, then download the result.
                 </p>
               </div>
             </div>
             <div
-              className="rounded-box p-6 flex gap-4 items-start border border-white/25 shadow-xl border-l-4 border-l-coral bg-ocean-dark/70 backdrop-blur-sm"
+              className="rounded-box p-4 sm:p-6 flex gap-3 sm:gap-4 items-start border border-white/25 shadow-xl border-l-4 border-l-coral bg-ocean-dark/70 backdrop-blur-sm"
               style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.25)' }}
             >
-              <span className="text-3xl shrink-0" aria-hidden>⬇️</span>
-              <div>
-                <h2 className="text-lg font-semibold mb-1.5 text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>One-click download</h2>
-                <p className="text-[0.95rem] text-white/95" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
+              <span className="text-2xl sm:text-3xl shrink-0" aria-hidden>⬇️</span>
+              <div className="min-w-0">
+                <h2 className="text-base sm:text-lg font-semibold mb-1 sm:mb-1.5 text-white" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>One-click download</h2>
+                <p className="text-sm sm:text-[0.95rem] text-white/95 leading-snug" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
                   Preview your epsteined photo and download it in one click.
                 </p>
               </div>
@@ -210,14 +206,14 @@ export default function Presentation(): JSX.Element {
 
           <Link
             to="/workspace"
-            className="inline-block bg-sand text-ocean-dark px-8 py-4 rounded-box font-bold text-lg transition-all hover:bg-sand-light hover:text-ocean-deep shadow-lg hover:shadow-xl border-2 border-sand-dark/50"
+            className="inline-block w-full sm:w-auto bg-sand text-ocean-dark px-6 sm:px-8 py-3.5 sm:py-4 rounded-box font-bold text-base sm:text-lg transition-all hover:bg-sand-light hover:text-ocean-deep shadow-lg hover:shadow-xl border-2 border-sand-dark/50 text-center min-h-[48px] flex items-center justify-center"
             style={{ textShadow: '0 1px 2px rgba(255,255,255,0.3)' }}
           >
             Get started →
           </Link>
 
           {offline && (
-            <p className="mt-8 text-sm text-white/90" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.4)' }}>
+            <p className="mt-6 sm:mt-8 text-xs sm:text-sm text-white/90 px-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.4)' }}>
               Offline mode active. The tool is still usable.
             </p>
           )}
@@ -229,14 +225,14 @@ export default function Presentation(): JSX.Element {
           <svg
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
-            className="relative w-full h-12 sm:h-16 fill-sand-dark"
+            className="relative w-full h-10 sm:h-12 md:h-16 fill-sand-dark"
           >
             <path d="M0,64 C300,120 600,0 900,64 C1050,96 1150,80 1200,64 L1200,120 L0,120 Z" className="opacity-90" />
             <path d="M0,80 C250,40 550,100 900,80 C1050,72 1150,88 1200,80 L1200,120 L0,120 Z" className="opacity-70" />
           </svg>
         </div>
-        <div className="bg-gradient-to-b from-sand-dark to-sand h-24 sm:h-32 flex items-center justify-center">
-          <p className="text-sand-ink text-sm font-semibold">
+        <div className="bg-gradient-to-b from-sand-dark to-sand min-h-[5rem] sm:min-h-[6rem] md:min-h-[8rem] pt-6 pb-6 sm:pt-8 sm:pb-8 flex items-center justify-center px-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
+          <p className="text-sand-ink text-xs sm:text-sm font-semibold text-center break-words">
             epstein-👁️-matic · paradise edition
           </p>
         </div>
