@@ -54,6 +54,19 @@ export default function Travail(): JSX.Element {
           ctx.strokeRect(x1, y1, w1, h1);
         }
       });
+      if (forExport) {
+        const watermark = 'epsteinomatic.com';
+        const padding = Math.max(w, h) * 0.02;
+        const fontSize = Math.max(12, Math.min(w, h) * 0.025);
+        ctx.font = `${fontSize}px sans-serif`;
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'bottom';
+        ctx.strokeStyle = '#000';
+        ctx.lineWidth = Math.max(1, fontSize * 0.15);
+        ctx.strokeText(watermark, w - padding, h - padding);
+        ctx.fillStyle = 'rgba(255,255,255,0.9)';
+        ctx.fillText(watermark, w - padding, h - padding);
+      }
     },
     [persons, hidden]
   );
